@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="b1.css">
+    <title>Your Pharmacy</title>
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="logo">
+            <img src="1.png" alt="Your Pharmacy Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="login.html">login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br>
+
+    <div class="container">
+        <div class="form-container">
+            <h2><b>Full blood count</b></h2>
+            <form id="input-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age"><br><br>
+                
+                <label for="gender">Gender:</label><br>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+
+                <label for="RBCcount">RBC count (million cells/mcL):</label><br>
+                <input type="number" id="RBCcount" name="RBCcount" step="any"><br><br>
+                
+                <label for="WBCcount">WBC count (cells/mcL):</label><br>
+                <input type="number" id="WBCcount" name="WBCcount" step="any"><br><br>
+                
+                <label for="Hematocrit">Hematocrit(%):</label><br>
+                <input type="number" id="Hematocrit" name="Hematocrit" step="any"><br><br>
+
+                <label for="Hemoglobin">Hemoglobin(gm/dL):</label><br>
+                <input type="number" id="Hemoglobin" name="Hemoglobin" step="any"><br><br>
+
+                <label for="MCV">MCV(femtoliter):</label><br>
+                <input type="number" id="MCV" name="MCV" step="any"><br><br>
+
+                <label for="MCH">MCH(pg/cell):</label><br>
+                <input type="number" id="MCH" name="MCH" step="any"><br><br>
+
+                <label for="MCHC">MCHC(gm/dL):</label><br>
+                <input type="number" id="MCHC" name="MCHC" step="any"><br><br>
+
+                <label for="Plateletcount">Platelet count(dL):</label><br>
+                <input type="number" id="Plateletcount" name="Plateletcount" step="any"><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <br><br>
+
+        <div id="output-container" class="output-container" style="display: none;">
+            <h2>Result</h2>
+            <p id="output-text"></p>
+        </div>
+    </div>
+
+                <script>
+                    document.getElementById('input-form').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent default form submission
+            
+                        var name = document.getElementById('name').value;
+                        var age = document.getElementById('age').value;
+                        var gender = document.getElementById('gender').value;
+                        var RBCcount = parseFloat(document.getElementById('RBCcount').value);
+                        var WBCcount = parseFloat(document.getElementById('WBCcount').value);
+                        var Hematocrit = parseFloat(document.getElementById('Hematocrit').value);
+                        var Hemoglobin = parseFloat(document.getElementById('Hemoglobin').value);
+                        var MCV = parseFloat(document.getElementById('MCV').value);
+                        var MCH = parseFloat(document.getElementById('MCH').value);
+                        var MCHC = parseFloat(document.getElementById('MCHC').value);
+                        var Plateletcount = parseFloat(document.getElementById('Plateletcount').value);
+
+                        var outputMessage = "";
+            if (age < 0 || isNaN(age)) {
+                outputMessage += "Invalid age. <br>";
+            }
+
+            if (gender === 'male') {
+                if (RBCcount < 4.7) {
+                    outputMessage += "Your RBC count is low. It's crucial to consult a doctor for further evaluation. <br>";
+                } else if (RBCcount < 6.1) {
+                    outputMessage += "Your RBC count is normal. <br>";
+                } else if (RBCcount > 6.1) {
+                    outputMessage += "Your RBC count is high.It's crucial to consult a doctor for further evaluation. <br>";
+                }
+            } else if (gender === 'female') {
+                if (RBCcount < 4.2) {
+                    outputMessage += "Your RBC count is low. It's crucial to consult a doctor for further evaluation. <br>";
+                } else if (RBCcount < 5.4) {
+                    outputMessage += "Your RBC count is normal. <br>";
+                } else if (RBCcount > 5.4) {
+                    outputMessage += "Your RBC count is high. It's crucial to consult a doctor for further evaluation. <br>";
+                }
+            }
+
+            if (WBCcount < 4500) {
+                outputMessage += "Your WBC count is low.It's crucial to consult a doctor for further evaluation. <br>";
+            } else if (WBCcount < 10000) {
+                outputMessage += "Your WBC count is normal. <br>";
+            }else if (WBCcount > 10000) {
+                outputMessage += "Your WBC count is high.It's crucial to consult a doctor for further evaluation. <br>";
+            }
+
+            if (gender === 'male') {
+                if (Hematocrit < 40.7 ) {
+                    outputMessage += "Your Hematocrit count is low.It's crucial to consult a doctor for further evaluation. <br>";
+                } else if (Hematocrit < 50.3) {
+                    outputMessage += "Your Hematocrit count is normal. <br>";
+                } else if (Hematocrit > 50.3) {
+                    outputMessage += "Your Hematocrit count is high.It's crucial to consult a doctor for further evaluation. <br>";
+                }
+            } else if (gender === 'female') {
+                if (Hematocrit < 36.1 ) {
+                    outputMessage += "Your Hematocrit count is low.It's crucial to consult a doctor for further evaluation. <br>";
+                } else if (Hematocrit < 44.3) {
+                    outputMessage += "Your Hematocrit count is normal. <br>";
+                } else if (Hematocrit > 44.3) {
+                    outputMessage += "Your Hematocrit count is high.It's crucial to consult a doctor for further evaluation. <br>";
+                }
+            }
+
+            if (gender === 'male') {
+                if (Hemoglobin < 13.8  ) {
+                    outputMessage += "Your Hemoglobin count is low.It's crucial to consult a doctor for further evaluation. <br>";
+                } else if (Hematocrit < 17.2 ) {
+                    outputMessage += "Your Hemoglobin count is normal. <br>";
+                } else if (Hematocrit > 17.2 ) {
+                    outputMessage += "Your Hemoglobin count is high.It's crucial to consult a doctor for further evaluation. <br>";
+                }
+            } else if (gender === 'female') {
+                if (Hemoglobin < 12.1  ) {
+                    outputMessage += "Your Hemoglobin count is low.It's crucial to consult a doctor for further evaluation. <br>";
+                } else if (Hematocrit < 15.1 ) {
+                    outputMessage += "Your Hemoglobin count is normal. <br>";
+                } else if (Hemoglobin > 15.1 ) {
+                    outputMessage += "Your Hemoglobin count is high.It's crucial to consult a doctor for further evaluation. <br>";
+                }
+            }
+
+            if (MCV < 80) {
+                outputMessage += "Your MCV count is low.It's crucial to consult a doctor for further evaluation. <br>";
+            } else if (MCV < 95) {
+                outputMessage += "Your MCV count is normal. <br>";
+            } else if (MCV > 95) {
+                outputMessage += "Your MCV count is high. Please.It's crucial to consult a doctor for further evaluation. <br>";
+            }
+
+            if (MCH < 27) {
+                outputMessage += "Your MCH count is low.It's crucial to consult a doctor for further evaluation. <br>";
+            } else if (MCH < 31) {
+                outputMessage += "Your MCH count is normal. <br>";
+            } else if (MCH > 31) {
+                outputMessage += "Your MCH count is high.It's crucial to consult a doctor for further evaluation. <br>";
+            }
+
+            
+            if (MCHC < 32) {
+                outputMessage += "Your MCHC count is low.It's crucial to consult a doctor for further evaluation. <br>";
+            } else if (MCHC < 36) {
+                outputMessage += "Your MCHC count is normal. <br>";
+            } else if (MCHC > 36) {
+                outputMessage += "Your MCHC count is high.It's crucial to consult a doctor for further evaluation. <br>";
+            }
+
+            if ( Plateletcount< 150000) {
+                outputMessage += "Your Platelet count is low.It's crucial to consult a doctor for further evaluation. <br>";
+            } else if (Plateletcount < 450000) {
+                outputMessage += "Your Platelet count is normal. <br>";
+            } else if (Plateletcount > 450000) {
+                outputMessage += "Your Platelet count is high.It's crucial to consult a doctor for further evaluationr. <br>";
+            }
+
+            document.getElementById('output-text').innerHTML = outputMessage;
+            document.getElementById('output-container').style.display = "block";
+        });
+    </script>
+</body>
+</html>
+
+
+
+
