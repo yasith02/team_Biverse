@@ -1,3 +1,4 @@
+/* Your existing CSS styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -111,6 +112,20 @@ body {
   display: none;
 }
 
+.blue-button {
+  padding: 10px 20px;
+  background-color: #003366; /* Dark blue color */
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.blue-button:hover {
+  background-color: #4896df; /* Darker shade on hover */
+}
 
 
  
