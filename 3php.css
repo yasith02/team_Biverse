@@ -1,6 +1,39 @@
 .container {
     padding: 20px;
 }
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #93e9e9;
+    padding: 10px;
+    justify-content: center; /* Center logo and brand name */
+  }
+  
+  .logo {
+    width: 100px; /* Adjust width as needed */
+    height: auto;
+  }
+  
+  .brand-name {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu-items {
+    margin-left: auto;
+  }
+  
+  .menu-items a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  
+  .menu-items a:hover {
+    color: #007bff;
+  }
 
 h2 {
     text-align: center;
