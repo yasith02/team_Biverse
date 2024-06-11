@@ -23,7 +23,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Records</title>
-    <link rel="stylesheet" href="2.css">
+    <link rel="stylesheet" href="3php.css">
 </head>
 <body>
     <nav class="navbar">
@@ -52,14 +52,14 @@ $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row["location"] . "</td>";
-                    echo "<td>" . $row["cdate"] . "</td>";
-                    echo "<td>" . $row["time"] . "</td>";
-                    echo "<td>" . $row["name"] . "</td>";
-                    echo "<td>" . $row["age"] . "</td>";
-                    echo "<td>" . $row["gender"] . "</td>";
-                    echo "<td>" . $row["nic"] . "</td>";
-                    echo '<td><img src="data:image/jpeg;base64,'.base64_encode($row['certificate']).'" width="100"/></td>';
+                    echo "<td>" . htmlspecialchars($row["location"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["cdate"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["age"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["gender"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["nic"]) . "</td>";
+                    echo '<td><img src="data:image/jpeg;base64,'.base64_encode($row['certificate']).'" /></td>';
                     echo "</tr>";
                 }
             } else {
@@ -74,3 +74,4 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
+
