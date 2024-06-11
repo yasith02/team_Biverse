@@ -23,25 +23,31 @@
     <h4>Notice-Select the municipal council you select before</h4>
   </div>
   <div class="form">
-    <div id="choice">
-        <div id="selectpart">
-            <h>Select the location</h>
-            <select class="choose" id="locationSelect">
-                <option value="">Choose</option>
-                <option value="first">Anuradapura</option>
-                <option value="second">Kelaniya</option>
-                <option value="third">Walimada</option>
-            </select>
+    <form id="payment-form" action="process_payment.php" method="post" enctype="multipart/form-data">
+        <div id="choice">
+            <div id="selectpart">
+                <h>Select the location</h>
+                <select class="choose" id="locationSelect" name="location">
+                    <option value="">Choose</option>
+                    <option value="Anuradapura">Anuradapura</option>
+                    <option value="Kelaniya">Kelaniya</option>
+                    <option value="Walimada">Walimada</option>
+                </select>
+            </div>
+            <div id="bankDetails" class="blue-box hidden">
+                <h3>Bank Details</h3>
+                <p id="bankName">Bank:</p>
+                <p id="bankLocation">Bank Location:</p>
+                <p id="accountNumber">Account Number:</p>
+                <p id="intro">Pay the Rs.10,000.00 for this account number and upload the slip.</p>
+                <input type="hidden" id="bankNameInput" name="bank_name">
+                <input type="hidden" id="bankLocationInput" name="bank_location">
+                <input type="hidden" id="accountNumberInput" name="account_number">
+                <input type="file" id="slip" name="slip" class="blue-button hidden">
+                <button type="submit" class="blue-button hidden">Upload the bank slip</button>
+            </div>
         </div>
-        <div id="bankDetails" class="blue-box hidden">
-            <h3>Bank Details</h3>
-            <p id="bankName">Bank:</p>
-            <p id="bankLocation">Bank Location:</p>
-            <p id="accountNumber">Account Number:</p>
-            <p id="intro">Pay the Rs.10,000.00 for this account number and upload the slip.</p>
-            <button id="uploadButton" class="blue-button hidden">Upload the bank slip</button>
-        </div>
-    </div>
+    </form>
 </div>
 
 <script>
@@ -51,30 +57,47 @@
     var bankName = document.getElementById('bankName');
     var bankLocation = document.getElementById('bankLocation');
     var accountNumber = document.getElementById('accountNumber');
-    var uploadButton = document.getElementById('uploadButton');
+    var bankNameInput = document.getElementById('bankNameInput');
+    var bankLocationInput = document.getElementById('bankLocationInput');
+    var accountNumberInput = document.getElementById('accountNumberInput');
+    var slip = document.getElementById('slip');
+    var uploadButton = document.querySelector('button[type="submit"]');
 
     locationSelect.addEventListener('change', function() {
         var selectedLocation = locationSelect.value;
-        if (selectedLocation === 'first') {
+        if (selectedLocation === 'Anuradapura') {
             bankName.textContent = 'Bank: ABC Bank';
             bankLocation.textContent = 'Bank Location: XYZ Branch';
             accountNumber.textContent = 'Account Number: 1234567890';
+            bankNameInput.value = 'ABC Bank';
+            bankLocationInput.value = 'XYZ Branch';
+            accountNumberInput.value = '1234567890';
             bankDetails.classList.remove('hidden');
+            slip.classList.remove('hidden');
             uploadButton.classList.remove('hidden');
-        } else if (selectedLocation === 'second') {
+        } else if (selectedLocation === 'Kelaniya') {
             bankName.textContent = 'Bank: DEF Bank';
             bankLocation.textContent = 'Bank Location: PQR Branch';
             accountNumber.textContent = 'Account Number: 0987654321';
+            bankNameInput.value = 'DEF Bank';
+            bankLocationInput.value = 'PQR Branch';
+            accountNumberInput.value = '0987654321';
             bankDetails.classList.remove('hidden');
+            slip.classList.remove('hidden');
             uploadButton.classList.remove('hidden');
-        } else if (selectedLocation === 'third') {
+        } else if (selectedLocation === 'Walimada') {
             bankName.textContent = 'Bank: GHI Bank';
             bankLocation.textContent = 'Bank Location: LMN Branch';
             accountNumber.textContent = 'Account Number: 2468013579';
+            bankNameInput.value = 'GHI Bank';
+            bankLocationInput.value = 'LMN Branch';
+            accountNumberInput.value = '2468013579';
             bankDetails.classList.remove('hidden');
+            slip.classList.remove('hidden');
             uploadButton.classList.remove('hidden');
         } else {
             bankDetails.classList.add('hidden');
+            slip.classList.add('hidden');
             uploadButton.classList.add('hidden');
         }
     });
