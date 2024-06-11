@@ -22,22 +22,24 @@
   <div class="container">
     <div class="form-container">
         <h2><b>Customer's Detail's</b></h2>
-        <form id="input-form">
+        <form id="input-form" method="post" action="submit_customer_details.php">
             <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name" required><br><br>
             
             <label for="age">Age:</label><br>
-            <input type="number" id="age" name="age"><br><br>
+            <input type="number" id="age" name="age" required><br><br>
 
-            <label for="email">E mail:</label><br>
-            <input type="email" id="email" name="email"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
             
-            <label for="telenumber">Tele_number:</label><br>
-            <input type="number" id="telenumber" name="telenumber"><br><br>
+            <label for="telenumber">Tele Number:</label><br>
+            <input type="number" id="telenumber" name="telenumber" required><br><br>
 
+            <input type="submit" value="Submit">
+        </form>
     </div>
-</div>
-<div class="button-container">
+  </div>
+  <div class="button-container">
     <a href="2.html" class="previous-btn">
       <span class="button-text">Previous</span>
     </a>
@@ -45,5 +47,5 @@
       <span class="button-text">Next</span>
     </a>
   </div>
-  </body>
-  </html>
+</body>
+</html>
