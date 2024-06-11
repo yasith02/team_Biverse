@@ -23,7 +23,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Records</title>
-    <link rel="stylesheet" href="3php.css">
+    <link rel="stylesheet" href="4php.css">
 </head>
 <body>
     <nav class="navbar">
