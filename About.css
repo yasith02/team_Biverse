@@ -1,0 +1,138 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.background {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #93e9e9;
+    padding: 10px;
+    justify-content: center; /* Center logo and brand name */
+  }
+  
+  .logo {
+    width: 100px; /* Adjust width as needed */
+    height: auto;
+  }
+  
+  .brand-name {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu-items {
+    margin-left: auto;
+  }
+  
+  .menu-items a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  
+  .menu-items a:hover {
+    color: #007bff;
+  }
+
+.background::before {
+    content: '';
+    background-image: url('Biverse.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.35;
+    }
+    
+
+
+.large {
+    font-size: 16px;
+    font-family: cursive;
+    position: relative;
+    bottom: 50%;
+    left: 25%;
+    text-align: center;
+    font-style: italic;
+}
+
+.medium {
+    font-size: 100px;
+    font-family: Forte;
+    position: absolute;
+    bottom: 75%;
+    left: 15%;
+    text-align: center;
+}
+
+.small {
+    font-size: 100px;
+    font-family: Forte;
+    position: absolute;
+    bottom: 60%;
+    left: 33%;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .large {
+        font-size: 16px;
+        left: 5%;
+    }
+
+    .medium, .small {
+        font-size: 60px;
+        
+    }
+
+    .medium {
+        left: 5%;
+        bottom: 65%;
+
+    }
+
+    .small {
+        left: 25%;
+        bottom: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .large {
+        font-size: 12px;
+        left: 0;
+    }
+
+    .medium, .small {
+        font-size: 40px;
+        
+    }
+
+    .medium {
+        left: 3%;
+        bottom:65%
+    }
+
+    .small {
+        left: 20%;
+        bottom:60%;
+    }
+}
