@@ -62,6 +62,25 @@ $result = $conn->query($sql);
             </table>
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="gmail.png" alt="Email Icon" class="footer-icon">
+                <p>srilankagov@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <img src="facebook.png" alt="Facebook Icon" class="footer-icon">
+                <p>https://facebook.com</p>
+            </div>
+            <div class="footer-section">
+                <img src="phone.png" alt="Phone Icon" class="footer-icon">
+                <p>+94 25-7778978</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright© 2024 Government of Sri Lanka. All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 </html>
 
