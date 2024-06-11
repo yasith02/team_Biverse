@@ -31,7 +31,6 @@ $result = $conn->query($sql);
         <span class="brand-name">Eterna Care</span>
         <div class="menu-items">
             <a href="index.html">Home</a>
-            <a href="view_customer_details.php">View Customer Details</a>
             <a href="#">Contact</a>
             <a href="#">About Us</a>
         </div>
