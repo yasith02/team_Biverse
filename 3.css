@@ -113,3 +113,47 @@ body {
   .button-text {
     vertical-align: middle; /* Vertically center text within buttons */
   }
+  .footer {
+    background-color: #d9e8f7;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .footer-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .footer-bottom {
+    background-color: #c1d7f0;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .footer-bottom p {
+    font-size: 12px;
+    color: #333;
+  }
+  
