@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "eterna_care"; // Replace with your database name
+$dbname = "eterna_care"; // Ensure this is your correct database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,9 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch records from the database
-$sql = "SELECT a.location, a.cdate, a.time, d.name, d.age, d.gender, d.nic, d.certificate 
-        FROM appointments a 
-        JOIN deceased_details d ON a.id = d.appointment_id";
+$sql = "SELECT location, cdate, time, name, age, gender, nic, certificate FROM form_entries";
 $result = $conn->query($sql);
 ?>
 
