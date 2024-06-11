@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eterna Care</title>
+<link rel="stylesheet" href="4.css">
+</head>
+<body>
+  <nav class="navbar">
+    <img src="logo.png" alt="Eterna Care Logo" class="logo">
+    <span class="brand-name">Eterna Care</span>
+    <div class="menu-items">
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">About Us</a>
+    </div>
+  </nav>
+  <div class="payment-container">
+    <h2>Payment Details</h2>
+  </div>
+  <div class="text">
+  <h4>Notice-Select the municipal council you select before</h4>
+  </div>
+  <div class="form">
+    <div id="choice">
+        <div id="selectpart">
+            <h>Select the location</h>
+            <select class="choose" id="locationSelect">
+                <option value="">Choose</option>
+                <option value="first">Anuradapura</option>
+                <option value="second">Kelaniya</option>
+                <option value="third">Walimada</option>
+            </select>
+        </div>
+        <div id="bankDetails" class="blue-box hidden">
+            <h3>Bank Details</h3>
+            <p id="bankName">Bank:</p>
+            <p id="bankLocation">Bank Location:</p>
+            <p id="accountNumber">Account Number:</p>
+            <p id="intro">Pay the Rs.10,000.00 for this account number and upload the slip.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var locationSelect = document.getElementById('locationSelect');
+    var bankDetails = document.getElementById('bankDetails');
+    var bankName = document.getElementById('bankName');
+    var bankLocation = document.getElementById('bankLocation');
+    var accountNumber = document.getElementById('accountNumber');
+
+    locationSelect.addEventListener('change', function() {
+        var selectedLocation = locationSelect.value;
+        if (selectedLocation === 'first') {
+            bankName.textContent = 'Bank: ABC Bank';
+            bankLocation.textContent = 'Bank Location: XYZ Branch';
+            accountNumber.textContent = 'Account Number: 1234567890';
+            bankDetails.classList.remove('hidden');
+        } else if (selectedLocation === 'second') {
+            bankName.textContent = 'Bank: DEF Bank';
+            bankLocation.textContent = 'Bank Location: PQR Branch';
+            accountNumber.textContent = 'Account Number: 0987654321';
+            bankDetails.classList.remove('hidden');
+        } else if (selectedLocation === 'third') {
+            bankName.textContent = 'Bank: GHI Bank';
+            bankLocation.textContent = 'Bank Location: LMN Branch';
+            accountNumber.textContent = 'Account Number: 2468013579';
+            bankDetails.classList.remove('hidden');
+        } else {
+            bankDetails.classList.add('hidden');
+        }
+    });
+});
+
+</script>
+</body>
+</html>
