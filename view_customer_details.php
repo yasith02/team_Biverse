@@ -23,14 +23,14 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Customer Details</title>
-    <link rel="stylesheet" href="3php.css">
+    <link rel="stylesheet" href="4php.css">
 </head>
 <body>
     <nav class="navbar">
         <img src="logo.png" alt="Eterna Care Logo" class="logo">
         <span class="brand-name">Eterna Care</span>
         <div class="menu-items">
-            <a href="index.html">Home</a>
+            <a href="#">Home</a>
             <a href="#">Contact</a>
             <a href="#">About Us</a>
         </div>
