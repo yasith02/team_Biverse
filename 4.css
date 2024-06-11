@@ -63,9 +63,9 @@ body {
 .form {
   background-color: rgb(255, 255, 255);
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 140px); /* Adjusted height to account for footer */
   background-size: cover;
-  position: absolute;
+  position: relative; /* Changed from absolute */
 }
 
 #choice {
@@ -126,6 +126,52 @@ body {
 .blue-button:hover {
   background-color: #4896df; /* Darker shade on hover */
 }
+
+.footer {
+  background-color: #d9e8f7;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  background-color: #c1d7f0;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #333;
+}
+
 
 
  
