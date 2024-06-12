@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "eterna_care"; // Ensure this is your correct database name
+$dbname = "eterna_care";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch records from the database
-$sql = "SELECT location, cdate, time, name, age, gender, nic, certificate FROM form_entries";
+$sql = "SELECT location, cdate, time, death_name, death_age, gender, nic, certificate, customer_name, customer_age, email, telenumber, created_at FROM records";
 $result = $conn->query($sql);
 ?>
 
@@ -30,7 +30,7 @@ $result = $conn->query($sql);
         <img src="logo.png" alt="Eterna Care Logo" class="logo">
         <span class="brand-name">Eterna Care</span>
         <div class="menu-items">
-            <a href="index.html">Home</a>
+            <a href="#">Home</a>
             <a href="#">Contact</a>
             <a href="#">About Us</a>
         </div>
@@ -42,11 +42,16 @@ $result = $conn->query($sql);
                 <th>Location</th>
                 <th>Date</th>
                 <th>Time</th>
-                <th>Name</th>
-                <th>Age</th>
+                <th>Death Name</th>
+                <th>Death Age</th>
                 <th>Gender</th>
                 <th>NIC</th>
-                <th>Verify Certificate</th>
+                <th>Certificate</th>
+                <th>Customer Name</th>
+                <th>Customer Age</th>
+                <th>Email</th>
+                <th>Telephone Number</th>
+                <th>Created At</th>
             </tr>
             <?php
             if ($result->num_rows > 0) {
@@ -55,23 +60,31 @@ $result = $conn->query($sql);
                     echo "<td>" . htmlspecialchars($row["location"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["cdate"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($row["age"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["death_name"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["death_age"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["gender"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["nic"]) . "</td>";
-                    echo '<td><img src="data:image/jpeg;base64,'.base64_encode($row['certificate']).'" /></td>';
+                    echo "<td>";
+                    if (!empty($row['certificate'])) {
+                        $imgData = base64_encode($row['certificate']);
+                        $src = 'data:image/jpeg;base64,' . $imgData;
+                        echo '<img src="' . $src . '" width="100"/>';
+                    } else {
+                        echo 'No certificate';
+                    }
+                    echo "</td>";
+                    echo "<td>" . htmlspecialchars($row["customer_name"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["customer_age"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["telenumber"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["created_at"]) . "</td>";
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='8'>No records found</td></tr>";
+                echo "<tr><td colspan='13'>No records found</td></tr>";
             }
             ?>
         </table>
-    </div>
-    <div class="button-container">
-        <a href="view_customer_details.php" class="next-btn">
-            <span class="button-text">Next</span>
-        </a>
     </div>
     <footer class="footer">
         <div class="footer-content">
@@ -98,4 +111,3 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
-
