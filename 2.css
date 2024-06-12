@@ -120,6 +120,7 @@ select, input[type="date"] {
   background-color: #d9e8f7;
   padding: 20px 0;
   text-align: center;
+  position: relative;
 }
 
 .footer-content {
