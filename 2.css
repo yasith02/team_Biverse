@@ -116,7 +116,6 @@ select, input[type="date"] {
 .button-text {
   vertical-align: middle; /* Vertically center text within buttons */
 }
-
 .footer {
   background-color: #d9e8f7;
   padding: 20px 0;

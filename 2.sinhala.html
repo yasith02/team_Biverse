@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eterna Care</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="logo.png" alt="Eterna Care Logo" class="logo">
+        <span class="brand-name">Eterna Care</span>
+        <div class="menu-items">
+            <a href="2.html">Home</a>
+            <a href="3.html">Contact</a>
+            <a href="About_Us.html">About Us</a>
+        </div>
+    </nav>
+    <div class="image-container">
+        <img src="2nd page.jpg" alt="Your Image" class="image">
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <form id="input-form" method="post" action="submit_form.php" enctype="multipart/form-data">
+                <div class="input-box">
+                    <label for="location">ස්ථානය තෝරන්න:</label>
+                    <select id="location" name="location">
+                        <option value="Anuradapura">අනුරාධපුර</option>
+                        <option value="Kelaniya">කැළණිය</option>
+                        <option value="Walimada">වැලිමඩ</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="cdate">දිනය තෝරන්න:</label>
+                    <input type="date" id="cdate" name="cdate">
+                </div>
+                <div class="input-box">
+                    <label for="time">Select the time:</label>
+                    <select id="time" name="time">
+                        <option value="1.00pm">1.00 ප.ව</option>
+                        <option value="2.00pm">2.00 ප.ව</option>
+                        <option value="3.00pm">3.00 ප.ව</option>
+                        <option value="4.00pm">4.00 ප.ව</option>
+                    </select>
+                </div>
+                <h2><b>මිය ගිය පුද්ගලයාගේ විස්තර</b></h2>
+                <label for="name">නම:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                
+                <label for="age">වයස:</label><br>
+                <input type="number" id="age" name="age"><br><br>
+
+                <label for="gender">ස්ත්රී පුරුෂ භාවය:</label><br>
+                <input type="text" id="gender" name="gender"><br><br>
+                
+                <label for="nic">ජාතික හැඳුනුම්පත අංකය:</label><br>
+                <input type="text" id="nic" name="nic"><br><br>
+
+                <label for="certificate" class="upload-button">තහවුරු කිරීමේ සහතිකයක් උඩුගත කරන්න</label>
+                <input type="file" id="certificate" name="certificate" accept="image/*"><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="previous_page.html" class="previous-btn">
+            <span class="button-text">පසුවට</span>
+        </a>
+        <a href="3.html" class="next-btn">
+            <span class="button-text">ඉදිරියට</span>
+        </a>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="gmail.png" alt="Email Icon" class="footer-icon">
+                <p>srilankagov@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <img src="facebook.png" alt="Facebook Icon" class="footer-icon">
+                <p>https://facebook.com</p>
+            </div>
+            <div class="footer-section">
+                <img src="phone.png" alt="Phone Icon" class="footer-icon">
+                <p>+94 25-7778978</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright© 2024 Government of Sri Lanka. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
