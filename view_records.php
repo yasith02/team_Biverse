@@ -68,6 +68,11 @@ $result = $conn->query($sql);
             ?>
         </table>
     </div>
+    <div class="button-container">
+        <a href="view_customer_details.php" class="next-btn">
+            <span class="button-text">Next</span>
+        </a>
+    </div>
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
