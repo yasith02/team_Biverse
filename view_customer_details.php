@@ -63,7 +63,7 @@ $result = $conn->query($sql);
         </div>
     </div>
     <div class="button-container">
-        <a href="view_customer_details.php" class="previous-btn">
+        <a href="view_records.php" class="previous-btn">
             <span class="button-text">Previous</span>
         </a>
         <a href="view_payment_details.php" class="next-btn">
