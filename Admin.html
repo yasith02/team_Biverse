@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eterna Care</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="logo.png" alt="Eterna Care Logo" class="logo">
+        <span class="brand-name">Eterna Care</span>
+        <div class="menu-items">
+            <a href="Eterna Care 1.html">Home</a>
+            <a href="#">Contact</a>
+            <a href="About_Us.html">About Us</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="form-container">
+            <h2><b>Admin</b></h2>
+            <form id="input-form">
+                <label for="username">User Name:</label><br>
+                <input type="text" id="username" name="username"><br><br>
+                
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="error-message" style="color: red;"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('input-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
+
+            if (username === 'eternacare' && password === '12345678') {
+                window.location.href = 'view_records.php'; // Redirect to the next page
+            } else {
+                errorMessage.textContent = 'Invalid username or password';
+            }
+        });
+    </script>
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="gmail.png" alt="Email Icon" class="footer-icon">
+                <p>srilankagov@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <img src="facebook.png" alt="Facebook Icon" class="footer-icon">
+                <p>https://facebook.com</p>
+            </div>
+            <div class="footer-section">
+                <img src="phone.png" alt="Phone Icon" class="footer-icon">
+                <p>+94 25-7778978</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright© 2024 Government of Sri Lanka. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
