@@ -23,7 +23,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Records</title>
-    <link rel="stylesheet" href="4php.css">
+    <link rel="stylesheet" href="6ph.css">
 </head>
 <body>
     <nav class="navbar">
@@ -86,6 +86,9 @@ $result = $conn->query($sql);
             ?>
         </table>
     </div>
+    <a href="view_payment_details.php" class="next-btn">
+      <span class="button-text">Next</span>
+    </a>
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
