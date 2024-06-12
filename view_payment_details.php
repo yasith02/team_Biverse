@@ -70,6 +70,11 @@ $result = $conn->query($sql);
             ?>
         </table>
     </div>
+    <div class="button-container">
+        <a href="view_customer_details.php" class="previous-btn">
+            <span class="button-text">Previous</span>
+        </a>
+    </div>
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
